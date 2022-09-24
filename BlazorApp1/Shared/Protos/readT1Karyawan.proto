@@ -1,0 +1,32 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "BlazorApp1.Shared.Protos";
+package ReadT1KaryawanPackage;
+
+service svpReadT1Karyawan{
+	rpc GetAllT1Karyawan (GetAllT1KaryawanRequest) returns (GetAllT1KaryawanReply);
+	rpc GetT1KaryawanById (GetT1KaryawanByIdRequest) returns (proT1Karyawan);
+	rpc GetAllT1KaryawanStreaming (GetAllT1KaryawanRequest) returns (stream GetAllT1KaryawanReply);
+}
+
+message GetAllT1KaryawanRequest{
+
+}
+
+message GetT1KaryawanByIdRequest{
+	string IdKaryawan = 1;
+}
+
+message GetAllT1KaryawanReply{
+	repeated proT1Karyawan DaftarT1Karyawan= 1;
+}
+
+message proT1Karyawan{
+	string IdKaryawan = 1;
+	string IdJabatan = 2;
+	string IdDivisiPerusahaan = 3;
+	string NamaLengkap = 4;
+	string NamaPanggilan = 5;
+	string Alamat = 6;
+
+}

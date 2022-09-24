@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Protos\readT0DivisiPerusahaan.proto" />
+    <None Remove="Protos\readT0Jabatan.proto" />
+    <None Remove="Protos\readT1Karyawan.proto" />
+    <None Remove="Protos\writeT0DivisiPerusahaan.proto" />
+    <None Remove="Protos\writeT0Jabatan.proto" />
+    <None Remove="Protos\writeT1Karyawan.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.21.6" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.48.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.48.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\readT0DivisiPerusahaan.proto" />
+    <Protobuf Include="Protos\readT0Jabatan.proto" />
+    <Protobuf Include="Protos\readT1Karyawan.proto" GrpcServices="Both" />
+    <Protobuf Include="Protos\writeT0DivisiPerusahaan.proto" />
+    <Protobuf Include="Protos\writeT0Jabatan.proto" />
+    <Protobuf Include="Protos\writeT1Karyawan.proto" GrpcServices="Both" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Pantheon">
+      <HintPath>..\..\..\..\..\#Azure DevOps\FortisCentral\PantheonBlazor\Pantheon\bin\Debug\net6.0\Pantheon.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

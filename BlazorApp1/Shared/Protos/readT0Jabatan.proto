@@ -1,0 +1,30 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "BlazorApp1.Shared.Protos";
+package ReadT0JabatanPackage;
+
+service svpReadT0Jabatan{
+	rpc GetAllT0Jabatan (GetAllT0JabatanRequest) returns (GetAllT0JabatanReply);
+	rpc GetT0JabatanById (GetT0JabatanByIdRequest) returns (proT0Jabatan);
+	rpc GetAllT0JabatanStreaming (GetAllT0JabatanRequest) returns (stream GetAllT0JabatanReply);
+}
+
+message GetAllT0JabatanRequest{
+
+}
+
+message GetT0JabatanByIdRequest{
+	string IdJabatan = 1;
+}
+
+message GetAllT0JabatanReply{
+	repeated proT0Jabatan DaftarT0Jabatan= 1;
+}
+
+message proT0Jabatan{
+	string IdJabatan = 1;
+	string Jabatan = 2;
+	string Grade = 3;
+	string Keterangan = 4;
+
+}

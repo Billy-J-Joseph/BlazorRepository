@@ -1,0 +1,29 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "BlazorApp1.Shared.Protos";
+package ReadT0DivisiPerusahaanPackage;
+
+service svpReadT0DivisiPerusahaan{
+	rpc GetAllT0DivisiPerusahaan (GetAllT0DivisiPerusahaanRequest) returns (GetAllT0DivisiPerusahaanReply);
+	rpc GetT0DivisiPerusahaanById (GetT0DivisiPerusahaanByIdRequest) returns (proT0DivisiPerusahaan);
+	rpc GetAllT0DivisiPerusahaanStreaming (GetAllT0DivisiPerusahaanRequest) returns (stream GetAllT0DivisiPerusahaanReply);
+}
+
+message GetAllT0DivisiPerusahaanRequest{
+
+}
+
+message GetT0DivisiPerusahaanByIdRequest{
+	string IdDivisiPerusahaan = 1;
+}
+
+message GetAllT0DivisiPerusahaanReply{
+	repeated proT0DivisiPerusahaan DaftarT0DivisiPerusahaan= 1;
+}
+
+message proT0DivisiPerusahaan{
+	string IdDivisiPerusahaan = 1;
+	string Divisi = 2;
+	string Keterangan = 3;
+
+}

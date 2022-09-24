@@ -1,0 +1,32 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "BlazorApp1.Shared.Protos";
+package WriteT0JabatanPackage;
+
+service svpWriteT0Jabatan{
+	rpc InsertT0Jabatan (InsertT0JabatanRequest) returns (WriteJabatanReply);
+	rpc UpdateT0Jabatan (UpdateT0JabatanRequest) returns (WriteJabatanReply);
+	rpc DeleteT0Jabatan (DeleteT0JabatanRequest) returns (WriteJabatanReply);
+}
+
+message InsertT0JabatanRequest{
+	string Jabatan = 1;
+	string Grade = 2;
+	string Keterangan = 3;
+}
+
+message UpdateT0JabatanRequest{
+	string IdJabatan = 1;
+	string Jabatan = 2;
+	string Grade = 3;
+	string Keterangan = 4;
+}
+
+message DeleteT0JabatanRequest{
+	string IdJabatan = 1;
+}
+
+message WriteJabatanReply{
+	bool IsOk = 1;
+	string Hasil = 2;
+}
