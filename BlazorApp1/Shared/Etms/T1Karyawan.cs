@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BlazorApp1.Shared.Etms
 {
-    public class T1Karyawan : pthBaseT1Karyawan
+    public class T1Karyawan : pthT1Karyawan
     {
         [ForeignKey("IdJabatan")]
         public T0Jabatan? T0Jabatan { get; set; }
