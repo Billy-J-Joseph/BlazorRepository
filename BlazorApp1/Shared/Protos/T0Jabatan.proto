@@ -3,10 +3,13 @@
 option csharp_namespace = "BlazorApp1.Shared.Protos";
 package ReadT0JabatanPackage;
 
-service svpReadT0Jabatan{
+service svpT0Jabatan{
 	rpc GetAllT0Jabatan (GetAllT0JabatanRequest) returns (GetAllT0JabatanReply);
 	rpc GetT0JabatanById (GetT0JabatanByIdRequest) returns (proT0Jabatan);
 	rpc GetAllT0JabatanStreaming (GetAllT0JabatanRequest) returns (stream GetAllT0JabatanReply);
+	rpc InsertT0Jabatan (InsertT0JabatanRequest) returns (WriteJabatanReply);
+	rpc UpdateT0Jabatan (proT0Jabatan) returns (WriteJabatanReply);
+	rpc DeleteT0Jabatan (DeleteT0JabatanRequest) returns (WriteJabatanReply);
 }
 
 message GetAllT0JabatanRequest{
@@ -26,5 +29,19 @@ message proT0Jabatan{
 	string Jabatan = 2;
 	string Grade = 3;
 	string Keterangan = 4;
+}
 
+message InsertT0JabatanRequest{
+	string Jabatan = 1;
+	string Grade = 2;
+	string Keterangan = 3;
+}
+
+message DeleteT0JabatanRequest{
+	string IdJabatan = 1;
+}
+
+message WriteJabatanReply{
+	bool IsOk = 1;
+	string Hasil = 2;
 }

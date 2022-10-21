@@ -7,12 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Protos\readT0DivisiPerusahaan.proto" />
-    <None Remove="Protos\readT0Jabatan.proto" />
-    <None Remove="Protos\readT1Karyawan.proto" />
-    <None Remove="Protos\writeT0DivisiPerusahaan.proto" />
-    <None Remove="Protos\writeT0Jabatan.proto" />
-    <None Remove="Protos\writeT1Karyawan.proto" />
+    <None Remove="Protos\T0DivisiPerusahaan.proto" />
+    <None Remove="Protos\T0Jabatan.proto" />
+    <None Remove="Protos\T1Karyawan.proto" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,12 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\readT0DivisiPerusahaan.proto" />
-    <Protobuf Include="Protos\readT0Jabatan.proto" />
-    <Protobuf Include="Protos\readT1Karyawan.proto" GrpcServices="Both" />
-    <Protobuf Include="Protos\writeT0DivisiPerusahaan.proto" />
-    <Protobuf Include="Protos\writeT0Jabatan.proto" />
-    <Protobuf Include="Protos\writeT1Karyawan.proto" GrpcServices="Both" />
+    <Protobuf Include="Protos\T0DivisiPerusahaan.proto" />
+    <Protobuf Include="Protos\T0Jabatan.proto" />
+    <Protobuf Include="Protos\T1Karyawan.proto" GrpcServices="Both" />
   </ItemGroup>
 
   <ItemGroup>

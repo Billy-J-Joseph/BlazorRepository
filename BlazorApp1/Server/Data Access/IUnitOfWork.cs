@@ -6,12 +6,9 @@ namespace BlazorApp1.Server.Data_Access
 {
     public interface IUnitOfWork : IDisposable
     {
-        IReadT1KaryawanRepo ReadT1KaryawanRepo { get; }
-        IWriteT1KaryawanRepo WriteT1KaryawanRepo { get; }
-        IReadT0DivisiPerusahaanRepo ReadT0DivisiPerusahaanRepo { get; }
-        IWriteT0DivisiPerusahaanRepo WriteT0DivisiPerusahaanRepo { get; }
-        IReadT0JabatanRepo ReadT0JabatanRepo { get; }
-        IWriteT0JabatanRepo WriteT0JabatanRepo { get; }
+        IRepoT1Karyawan RepoT1Karyawan { get; }
+        IRepoT0DivisiPerusahaan RepoT0DivisiPerusahaan { get; }
+        IRepoT0Jabatan RepoT0Jabatan { get; }
         Task Selesai();
     }
 }

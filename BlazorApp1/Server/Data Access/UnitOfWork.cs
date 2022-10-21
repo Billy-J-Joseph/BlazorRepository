@@ -7,27 +7,18 @@ namespace BlazorApp1.Server.Data_Access
     public class UnitOfWork : IUnitOfWork
     {
         private readonly DataContext _db;
-        public IReadT1KaryawanRepo ReadT1KaryawanRepo {get; private set;}
+        public IRepoT1Karyawan RepoT1Karyawan { get; private set;}
 
-        public IWriteT1KaryawanRepo WriteT1KaryawanRepo { get; private set; }
+        public IRepoT0DivisiPerusahaan RepoT0DivisiPerusahaan { get; private set; }
 
-        public IReadT0DivisiPerusahaanRepo ReadT0DivisiPerusahaanRepo { get; private set; }
-
-        public IWriteT0DivisiPerusahaanRepo WriteT0DivisiPerusahaanRepo{ get; private set; }
-
-        public IReadT0JabatanRepo ReadT0JabatanRepo { get; private set; }
-
-        public IWriteT0JabatanRepo WriteT0JabatanRepo { get; private set; }
+        public IRepoT0Jabatan RepoT0Jabatan { get; private set; }
 
         public UnitOfWork(DataContext db)
         {
             _db = db;
-            ReadT1KaryawanRepo = new ReadT1KaryawanRepo(_db);
-            WriteT1KaryawanRepo = new WriteT1KaryawanRepo(_db);
-            ReadT0JabatanRepo = new ReadT0JabatanRepo(_db);
-            WriteT0JabatanRepo = new WriteT0JabatanRepo(_db);
-            ReadT0DivisiPerusahaanRepo =  new ReadT0DivisiPerusahaanRepo(_db);
-            WriteT0DivisiPerusahaanRepo = new WriteT0DivisiPerusahaanRepo(_db);
+            RepoT1Karyawan = new RepoT1Karyawan(_db);
+            RepoT0DivisiPerusahaan = new RepoT0DivisiPerusahaan(_db);
+            RepoT0Jabatan =  new RepoT0Jabatan(_db);
         }
         public void Dispose()
         {

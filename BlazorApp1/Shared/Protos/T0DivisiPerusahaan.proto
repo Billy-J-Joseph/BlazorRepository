@@ -3,10 +3,13 @@
 option csharp_namespace = "BlazorApp1.Shared.Protos";
 package ReadT0DivisiPerusahaanPackage;
 
-service svpReadT0DivisiPerusahaan{
+service svpT0DivisiPerusahaan{
 	rpc GetAllT0DivisiPerusahaan (GetAllT0DivisiPerusahaanRequest) returns (GetAllT0DivisiPerusahaanReply);
 	rpc GetT0DivisiPerusahaanById (GetT0DivisiPerusahaanByIdRequest) returns (proT0DivisiPerusahaan);
 	rpc GetAllT0DivisiPerusahaanStreaming (GetAllT0DivisiPerusahaanRequest) returns (stream GetAllT0DivisiPerusahaanReply);
+	rpc InsertT0DivisiPerusahaan (InsertT0DivisiPerusahaanRequest) returns (WriteDivisiPerusahaanReply);
+	rpc UpdateT0DivisiPerusahaan (proT0DivisiPerusahaan) returns (WriteDivisiPerusahaanReply);
+	rpc DeleteT0DivisiPerusahaan (DeleteT0DivisiPerusahaanRequest) returns (WriteDivisiPerusahaanReply);
 }
 
 message GetAllT0DivisiPerusahaanRequest{
@@ -25,5 +28,17 @@ message proT0DivisiPerusahaan{
 	string IdDivisiPerusahaan = 1;
 	string Divisi = 2;
 	string Keterangan = 3;
+}
+message InsertT0DivisiPerusahaanRequest{
+	string Divisi = 1;
+	string Keterangan = 2;
+}
 
+message DeleteT0DivisiPerusahaanRequest{
+	string IdDivisiPerusahaan = 1;
+}
+
+message WriteDivisiPerusahaanReply{
+	bool IsOk = 1;
+	string Hasil = 2;
 }

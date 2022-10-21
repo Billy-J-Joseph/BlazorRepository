@@ -4,7 +4,6 @@ global using BlazorApp1.Shared.Protos;
 global using Grpc.Core;
 global using Mapster;
 global using Microsoft.EntityFrameworkCore;
-global using Pantheon.Bases.BaseBlazorServer.BaseServerServices.Repositories.RepositoriGeneric;
 using BlazorApp1.Server.feaT1Karyawan.GrpcServices;
 using BlazorApp1.Server.Features.feaT0DivisiPeriusahaan.GrpcServices;
 using BlazorApp1.Server.Features.feaT0Jabatan.GrpcServices;
@@ -51,12 +50,9 @@ app.UseRouting();
 app.UseGrpcWeb();
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapGrpcService<svsReadT1Karyawan>().EnableGrpcWeb();
-    endpoints.MapGrpcService<svsWriteT1Karyawan>().EnableGrpcWeb();
-    endpoints.MapGrpcService<svsReadT0DivisiPerusahaan>().EnableGrpcWeb();
-    endpoints.MapGrpcService<svsWriteT0DivisiPerusahaan>().EnableGrpcWeb();
-    endpoints.MapGrpcService<svsReadT0Jabatan>().EnableGrpcWeb();
-    endpoints.MapGrpcService<svsWriteT0Jabatan>().EnableGrpcWeb();
+    endpoints.MapGrpcService<svsT1Karyawan>().EnableGrpcWeb();
+    endpoints.MapGrpcService<svsT0DivisiPerusahaan>().EnableGrpcWeb();
+    endpoints.MapGrpcService<svsT0Jabatan>().EnableGrpcWeb();
 
 });
 
