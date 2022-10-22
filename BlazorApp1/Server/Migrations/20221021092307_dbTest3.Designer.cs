@@ -4,6 +4,7 @@ using BlazorApp1.Server.Data_Access;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazorApp1.Server.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20221021092307_dbTest3")]
+    partial class dbTest3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,186 +23,6 @@ namespace BlazorApp1.Server.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("BlazorApp1.Shared.Etms.T0Company", b =>
-                {
-                    b.Property<string>("IdCompany")
-                        .IsUnicode(false)
-                        .HasColumnType("char(3)");
-
-                    b.Property<string>("Alamat")
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(max)");
-
-                    b.Property<string>("Departemen")
-                        .HasMaxLength(200)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<string>("Email1")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Email2")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("FaxPhone1")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("FaxPhone2")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<Guid?>("IdCreator")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdDirektur")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdKaryawan_Direktur")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<long?>("IdKota")
-                        .HasColumnType("bigint");
-
-                    b.Property<Guid?>("IdLogHeader")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdOperator")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdValidator")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdVendor_KPP")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Inisial")
-                        .HasMaxLength(200)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<bool?>("IsDVisible")
-                        .HasColumnType("bit");
-
-                    b.Property<bool?>("IsDefault")
-                        .HasColumnType("bit");
-
-                    b.Property<bool?>("IsRVisible")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Keterangan")
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(max)");
-
-                    b.Property<string>("KodePos")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("KotakPos")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("LogoPath")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("NPWP")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Nama")
-                        .HasMaxLength(500)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(500)");
-
-                    b.Property<string>("PKLink1")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("PKLink2")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Phone1")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Phone2")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Prefix")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)");
-
-                    b.Property<string>("Slogan")
-                        .HasMaxLength(200)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<string>("State")
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(max)");
-
-                    b.Property<bool?>("Status")
-                        .HasColumnType("bit");
-
-                    b.Property<bool?>("StatusPKP")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Synchronise")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)");
-
-                    b.Property<string>("Tag")
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(max)");
-
-                    b.Property<DateTimeOffset?>("WaktuInsert")
-                        .HasColumnType("datetimeoffset(7)");
-
-                    b.Property<DateTimeOffset?>("WaktuUpdate")
-                        .HasColumnType("datetimeoffset(7)");
-
-                    b.Property<string>("Website1")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Website2")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.HasKey("IdCompany");
-
-                    b.HasIndex("IdCreator");
-
-                    b.HasIndex("IdDirektur");
-
-                    b.HasIndex("IdOperator");
-
-                    b.HasIndex("IdValidator");
-
-                    b.ToTable("T0Company");
-                });
 
             modelBuilder.Entity("BlazorApp1.Shared.Etms.T0DivisiPerusahaan", b =>
                 {
@@ -263,225 +85,6 @@ namespace BlazorApp1.Server.Migrations
                     b.HasKey("IdDivisiPerusahaan");
 
                     b.ToTable("T0DivisiPerusahaan");
-                });
-
-            modelBuilder.Entity("BlazorApp1.Shared.Etms.T0Form", b =>
-                {
-                    b.Property<long>("IdForm")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdForm"), 1L, 1);
-
-                    b.Property<bool>("CanBatal")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CanBatasDataBaru")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CanBatasLihatData")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("CanCetak")
-                        .HasMaxLength(500)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(500)");
-
-                    b.Property<bool>("CanDataBaru")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CanHapus")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CanInspeksi")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CanLihatData")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CanLihatRekamanAktivitas")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CanSupervisi")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CanUbahData")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CanValidasi")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Form")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Icon")
-                        .HasMaxLength(200)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<Guid?>("IdCreator")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdLogHeader")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdOperator")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<long>("IdParent")
-                        .HasColumnType("bigint");
-
-                    b.Property<Guid?>("IdValidator")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Inisial")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Kategori")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Kode")
-                        .HasMaxLength(5)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(5)");
-
-                    b.Property<string>("NamaPK")
-                        .HasMaxLength(200)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<string>("NamaTabel")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Setting1")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Setting2")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Setting21")
-                        .HasMaxLength(200)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<string>("Setting22")
-                        .HasMaxLength(200)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<string>("Setting23")
-                        .HasMaxLength(200)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<string>("Setting24")
-                        .HasMaxLength(200)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<string>("Setting25")
-                        .HasMaxLength(200)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<string>("Setting26")
-                        .HasMaxLength(200)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<string>("Setting3")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Setting31")
-                        .HasMaxLength(500)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(500)");
-
-                    b.Property<string>("Setting32")
-                        .HasMaxLength(500)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(500)");
-
-                    b.Property<string>("Setting33")
-                        .HasMaxLength(500)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(500)");
-
-                    b.Property<string>("Setting34")
-                        .HasMaxLength(500)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(500)");
-
-                    b.Property<string>("Setting35")
-                        .HasMaxLength(500)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(500)");
-
-                    b.Property<string>("Setting36")
-                        .HasMaxLength(500)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(500)");
-
-                    b.Property<string>("Setting4")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Setting5")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Setting6")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("State")
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(max)");
-
-                    b.Property<bool?>("Status")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Synchronise")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)");
-
-                    b.Property<string>("Tag")
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(max)");
-
-                    b.Property<DateTimeOffset?>("WaktuInsert")
-                        .HasColumnType("datetimeoffset(7)");
-
-                    b.Property<DateTimeOffset?>("WaktuUpdate")
-                        .HasColumnType("datetimeoffset(7)");
-
-                    b.HasKey("IdForm");
-
-                    b.HasIndex("IdCreator");
-
-                    b.HasIndex("IdOperator");
-
-                    b.HasIndex("IdValidator");
-
-                    b.ToTable("T0Form");
                 });
 
             modelBuilder.Entity("BlazorApp1.Shared.Etms.T0Jabatan", b =>
@@ -1214,9 +817,6 @@ namespace BlazorApp1.Server.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(20)");
 
-                    b.Property<Guid?>("T1KaryawanIdKaryawan")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTimeOffset?>("WaktuInsert")
                         .HasColumnType("datetimeoffset");
 
@@ -1230,8 +830,6 @@ namespace BlazorApp1.Server.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.HasKey("IdOrderPenjualan");
-
-                    b.HasIndex("T1KaryawanIdKaryawan");
 
                     b.ToTable("T6OrderPenjualan");
                 });
@@ -1490,197 +1088,9 @@ namespace BlazorApp1.Server.Migrations
 
                     b.HasKey("IdDetilOrderPenjualan");
 
-                    b.HasIndex("IdOperator");
-
                     b.HasIndex("IdOrderPenjualan");
 
                     b.ToTable("T7OrderPenjualan");
-                });
-
-            modelBuilder.Entity("BlazorApp1.Shared.Etms.T9Privileges", b =>
-                {
-                    b.Property<Guid>("IdKaryawan")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<long?>("IdForm")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("IdCompany")
-                        .IsUnicode(false)
-                        .HasColumnType("char(3)");
-
-                    b.Property<string>("BatasDataBaru")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("BatasLihatData")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Cetak")
-                        .HasMaxLength(500)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(500)");
-
-                    b.Property<byte?>("DataBaru")
-                        .HasColumnType("tinyint");
-
-                    b.Property<string>("Grup")
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(max)");
-
-                    b.Property<Guid?>("IdOperator")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Inspeksi")
-                        .HasColumnType("bit");
-
-                    b.Property<bool?>("LihatRekamanAktivitas")
-                        .HasColumnType("bit");
-
-                    b.Property<short?>("PoinApprove")
-                        .HasColumnType("smallint");
-
-                    b.Property<short?>("PoinDecline")
-                        .HasColumnType("smallint");
-
-                    b.Property<bool?>("Setting1")
-                        .HasColumnType("bit");
-
-                    b.Property<bool?>("Setting2")
-                        .HasColumnType("bit");
-
-                    b.Property<byte?>("Setting21")
-                        .HasColumnType("tinyint");
-
-                    b.Property<byte?>("Setting22")
-                        .HasColumnType("tinyint");
-
-                    b.Property<byte?>("Setting23")
-                        .HasColumnType("tinyint");
-
-                    b.Property<byte?>("Setting24")
-                        .HasColumnType("tinyint");
-
-                    b.Property<byte?>("Setting25")
-                        .HasColumnType("tinyint");
-
-                    b.Property<byte?>("Setting26")
-                        .HasColumnType("tinyint");
-
-                    b.Property<bool?>("Setting3")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Setting31")
-                        .HasMaxLength(500)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(500)");
-
-                    b.Property<string>("Setting32")
-                        .HasMaxLength(500)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(500)");
-
-                    b.Property<string>("Setting33")
-                        .HasMaxLength(500)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(500)");
-
-                    b.Property<string>("Setting34")
-                        .HasMaxLength(500)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(500)");
-
-                    b.Property<string>("Setting35")
-                        .HasMaxLength(500)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(500)");
-
-                    b.Property<string>("Setting36")
-                        .HasMaxLength(500)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(500)");
-
-                    b.Property<bool?>("Setting4")
-                        .HasColumnType("bit");
-
-                    b.Property<bool?>("Setting5")
-                        .HasColumnType("bit");
-
-                    b.Property<bool?>("Setting6")
-                        .HasColumnType("bit");
-
-                    b.Property<bool?>("Supervisi")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Synchronise")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)");
-
-                    b.Property<byte?>("Urutan")
-                        .HasColumnType("tinyint");
-
-                    b.Property<bool?>("ValidasiPassword")
-                        .HasColumnType("bit");
-
-                    b.HasKey("IdKaryawan", "IdForm", "IdCompany");
-
-                    b.HasIndex("IdCompany");
-
-                    b.HasIndex("IdForm");
-
-                    b.ToTable("T9Privileges");
-                });
-
-            modelBuilder.Entity("BlazorApp1.Shared.Etms.T0Company", b =>
-                {
-                    b.HasOne("BlazorApp1.Shared.Etms.T1Karyawan", "T1Karyawan_Creator")
-                        .WithMany()
-                        .HasForeignKey("IdCreator");
-
-                    b.HasOne("BlazorApp1.Shared.Etms.T1Karyawan", "T1Karyawan_Direktur")
-                        .WithMany()
-                        .HasForeignKey("IdDirektur");
-
-                    b.HasOne("BlazorApp1.Shared.Etms.T1Karyawan", "T1Karyawan_Operator")
-                        .WithMany()
-                        .HasForeignKey("IdOperator");
-
-                    b.HasOne("BlazorApp1.Shared.Etms.T1Karyawan", "T1Karyawan_Validator")
-                        .WithMany()
-                        .HasForeignKey("IdValidator");
-
-                    b.Navigation("T1Karyawan_Creator");
-
-                    b.Navigation("T1Karyawan_Direktur");
-
-                    b.Navigation("T1Karyawan_Operator");
-
-                    b.Navigation("T1Karyawan_Validator");
-                });
-
-            modelBuilder.Entity("BlazorApp1.Shared.Etms.T0Form", b =>
-                {
-                    b.HasOne("BlazorApp1.Shared.Etms.T1Karyawan", "T1Karyawan_Creator")
-                        .WithMany()
-                        .HasForeignKey("IdCreator");
-
-                    b.HasOne("BlazorApp1.Shared.Etms.T1Karyawan", "T1Karyawan_Operator")
-                        .WithMany()
-                        .HasForeignKey("IdOperator");
-
-                    b.HasOne("BlazorApp1.Shared.Etms.T1Karyawan", "T1Karyawan_Validator")
-                        .WithMany()
-                        .HasForeignKey("IdValidator");
-
-                    b.Navigation("T1Karyawan_Creator");
-
-                    b.Navigation("T1Karyawan_Operator");
-
-                    b.Navigation("T1Karyawan_Validator");
                 });
 
             modelBuilder.Entity("BlazorApp1.Shared.Etms.T1Karyawan", b =>
@@ -1698,75 +1108,18 @@ namespace BlazorApp1.Server.Migrations
                     b.Navigation("T0Jabatan");
                 });
 
-            modelBuilder.Entity("BlazorApp1.Shared.Etms.T6OrderPenjualan", b =>
-                {
-                    b.HasOne("BlazorApp1.Shared.Etms.T1Karyawan", null)
-                        .WithMany("ListT6OrderPenjualan")
-                        .HasForeignKey("T1KaryawanIdKaryawan");
-                });
-
             modelBuilder.Entity("BlazorApp1.Shared.Etms.T7OrderPenjualan", b =>
                 {
-                    b.HasOne("BlazorApp1.Shared.Etms.T1Karyawan", "T1Karyawan_Operator")
-                        .WithMany()
-                        .HasForeignKey("IdOperator");
-
                     b.HasOne("BlazorApp1.Shared.Etms.T6OrderPenjualan", "T6OrderPenjualan")
                         .WithMany("ListT7OrderPenjualan")
                         .HasForeignKey("IdOrderPenjualan");
 
-                    b.Navigation("T1Karyawan_Operator");
-
                     b.Navigation("T6OrderPenjualan");
-                });
-
-            modelBuilder.Entity("BlazorApp1.Shared.Etms.T9Privileges", b =>
-                {
-                    b.HasOne("BlazorApp1.Shared.Etms.T0Company", "T0Company")
-                        .WithMany("ListT9Privileges")
-                        .HasForeignKey("IdCompany")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BlazorApp1.Shared.Etms.T0Form", "T0Form")
-                        .WithMany("ListT9Privileges")
-                        .HasForeignKey("IdForm")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BlazorApp1.Shared.Etms.T1Karyawan", "T1Karyawan")
-                        .WithMany("ListT9Privileges")
-                        .HasForeignKey("IdKaryawan")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("T0Company");
-
-                    b.Navigation("T0Form");
-
-                    b.Navigation("T1Karyawan");
-                });
-
-            modelBuilder.Entity("BlazorApp1.Shared.Etms.T0Company", b =>
-                {
-                    b.Navigation("ListT9Privileges");
-                });
-
-            modelBuilder.Entity("BlazorApp1.Shared.Etms.T0Form", b =>
-                {
-                    b.Navigation("ListT9Privileges");
                 });
 
             modelBuilder.Entity("BlazorApp1.Shared.Etms.T0Jabatan", b =>
                 {
                     b.Navigation("ListKaryawan");
-                });
-
-            modelBuilder.Entity("BlazorApp1.Shared.Etms.T1Karyawan", b =>
-                {
-                    b.Navigation("ListT6OrderPenjualan");
-
-                    b.Navigation("ListT9Privileges");
                 });
 
             modelBuilder.Entity("BlazorApp1.Shared.Etms.T6OrderPenjualan", b =>
